@@ -1,0 +1,18 @@
+nav{
+    height:55px;
+    background-color: #8a2ce2;
+  }
+  nav ul li a{
+    color:rgb(227, 225, 225) ;
+    font-family:math;
+    font-size:large;
+  
+  }
+
+body{
+    font-family: math;
+}
+
+.jumbotron{
+    font-family: math;
+}

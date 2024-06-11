@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/static/register.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {% for message in get_flashed_messages() %}
+            <strong>{{message}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {% endfor %}
+          </div>
+        <h1>REGISTER..</h1>
+        <form method="post" action="/form_data_store">
+            <label  for="t1">FIRST NAME</label>
+            <input type="text" placeholder="FIRST NAME" id="t1" name="FN" required ><br><br>
+
+            <label>NAME</label>
+            <input type="text" placeholder="LAST NAME"  name="LN" required><br><br>
+
+            <label>EMAILID</label>
+            <input type="text" placeholder="EMAILID"  required  name="ID"><br><br>
+
+            <label>GENDER</label>
+             <input type="text" placeholder="GENDER"  name="GENDER" required ><br><br>
+            <label>AGE</label>
+            <input type="text" placeholder="AGE"  name="AGE" required><br><br>
+            <label>STANDARD</label>
+            <input type="text" placeholder="STANDARD" required  name="STD" required><br><br>
+            
+            <label>CLASS_TEACHER</label>
+            <input type="text" placeholder="CLASS TEACHER" required  name="CT" required><br><br>
+            
+            <label>PASSWORD</label>
+            <input type="password" placeholder="SET PASSWORD" required  name="SP"><br><br>
+            <label>Active/IsActive</label>
+            <input type="checkbox"   name="ck"><br><br>
+            <input type="submit" value="REGISTER"><br><br>
+        </form>
+    
+    </div>
+</body>
+</html>

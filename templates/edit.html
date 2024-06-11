@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Page</title>
+    <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ------ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/static/edit.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-primary">
+<p class="p">USER DETAILS:</p>
+<h3 class="h">{{data[1]}}</h3>
+      </nav>
+    </header>
+<div class="d">
+  <form action="" method="POST" onsubmit="validateForm(event)">
+    <input type="text" id="fn" name="field1"  value="{{data[1]}}"><br>
+    <input type="text" id="ln" name="field2" value="{{data[2]}}"><br>
+    <input type="email" id="ml" name="field3" value="{{data[3]}}"><br>
+    <input type="text" id="gn" name="field4" value="{{data[4]}}"><br>
+    <input type="date" name="field5" value="{{data[5]}}"><br>
+    <input type="text" id="st" name="field6" value="{{data[6]}}"><br>
+    <input type="text" id="ct" name="field7" value="{{data[7]}}"><br>
+    <input type="text" id="sp" name="field8" value="{{data[8]}}"><br>
+    <input type="text" id="s" name="field9" value="{{data[9]}}">
+    <!-- Add input fields for each field you want to update -->
+    <input type="submit" value="Update" class="btn bg-primary">
+  </form>
+  <a href="{{ url_for('dash_bord')}}" class="sub"><button class="btn btn-success">BACK-TO-DASHBORD</button></a>
+</div>
+
+<div class="dd">
+FIRST_NAME<br>
+LAST_NAME<br>
+EMAIL<br>
+GENDER<br>
+AGE<br>
+STANDARD<br>
+CLASS_TEACHER<br>
+PASSWORD
+STATUS
+</div>
+ </body>
+ <script>
+  function validateForm(event) {
+    let firstNameInput = document.getElementById('fn');
+    let lastNameInput = document.getElementById('ln');
+    let emailInput = document.getElementById('ml'); // Assuming this is the email input field
+    let genderInput = document.getElementById('gn'); // Assuming this is the gender input field
+    let standard = document.getElementById('st'); // Assuming this is the gender input field
+    let status = document.getElementById('s'); // Assuming this is the gender input field
+    let teacher = document.getElementById('ct'); // Assuming this is the gender input field
+    let pas = document.getElementById('sp'); // Assuming this is the gender input field
+
+    let regex = /^[a-zA-Z]+$/;
+    let rg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    if (!regex.test(firstNameInput.value)) {
+      alert("Please enter  text for First Name");
+      firstNameInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else if (!regex.test(lastNameInput.value)) {
+      alert("Please enter  text for Last Name");
+      lastNameInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else if (!rg.test(emailInput.value)) {
+      alert("Please enter a valid email");
+      emailInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else if (!regex.test(genderInput.value)) {
+      alert("Please enter only text for Gender");
+      genderInput.focus();
+      event.preventDefault(); // Prevent form submission
+    }
+    else if (!regex.test(teacher.value)) {
+      alert("Please enter  text for class teacher");
+      genderInput.focus();
+      event.preventDefault(); // Prevent form submission
+    }
+    else if (!regex.test(standard.value)) {
+      alert("Please enter  text for standard field");
+      genderInput.focus();
+      event.preventDefault(); // Prevent form submission
+    }
+    else if (!regex.test(status.value)) {
+      alert("Please enter  text for status field");
+      genderInput.focus();
+      event.preventDefault(); // Prevent form submission
+    }
+    // Add additional if-else conditions for other fields
+
+    // If all fields are valid, the form will be submitted as usual
+  }
+</script>
+</html>

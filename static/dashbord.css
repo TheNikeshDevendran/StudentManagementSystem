@@ -1,0 +1,139 @@
+#customers {
+    font-family:math;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:14px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 7px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 9px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  h1{
+    background-color: rgb(174, 242, 197);
+    border: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 45px;
+    margin: 3.9px;
+
+  }
+
+  
+  .buttons {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: math;
+  }
+
+  .button {
+    background-color: #eb7464; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: math;
+
+  }
+
+  .buttonn {
+    background-color: #093355; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: math;
+
+  }
+  
+.forms{
+  float:center;
+}
+
+.buttonform {
+  background-color: #1f5b8d; /* Green */
+  border: none;
+  color: white;
+  padding: 6px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.container button{
+  float:right;
+  margin-right: -60px;
+  margin-top: -5px;
+  margin-bottom: 2px;
+}
+
+header{
+  margin-top: -18px;
+  font-family: math;
+}
+
+.dashbord{
+  margin-top: -3px;
+  margin-bottom: 2px;
+  
+}
+
+.ADD{
+  float: right;
+  margin-top: -49px;
+  /* margin-top: -93px; */
+  margin-right: 14px;
+}
+.exports{
+  float: right;
+    margin-top: -49px;
+    margin-right: 151px;
+}
+
+.homm{
+  float: right;
+  margin-top: -49px;
+  margin-right: 321px;
+}
+
+
+.log{
+  float: right;
+  margin-top: -49px;
+  margin-right: 401px;
+}
+
+.margin-form{
+  align-items: center;
+}
+
+.form-btn{
+  float: left;
+  margin-top: 25px;
+  margin-bottom: 18px;
+}

@@ -1,0 +1,67 @@
+nav{
+    height:55px;
+    background-color: #8a2ce2;
+  }
+  nav ul li a{
+    color:rgb(227, 225, 225) ;
+    font-family:math;
+    font-size:large;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:math;
+    font-size:large;
+  }
+
+.msg{
+    background-color: burlywood;
+
+}
+
+body strong{
+    color: rgb(231, 91, 40);
+}
+
+/* .maindiv h1{
+font-size:xx-large;
+font-family: math;
+} */
+
+/* .maindiv{
+    background-color: rgb(182, 206, 206);
+    float:left;
+    width: 500px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 100px;
+} */
+
+.jumbotron img{
+    margin-top: -188px;
+    float: right;
+}
+
+
+
+h4{
+    color: rgb(227, 57, 193);
+    font-weight: 200;
+    margin-left: 4px;
+}
+
+.alerts{
+width: 780px;
+margin-left: 30px;
+}
+
+.sec{
+    background-color: rgb(188, 218, 218);
+    float: right;
+    margin-top: -444px;
+    margin-right: 17px;
+    width: 373px;
+    height: 335px;
+}

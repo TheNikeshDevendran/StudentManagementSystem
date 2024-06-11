@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Page</title>
+    <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ------ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/static/view.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-primary">
+<p class="p">USER DETAILS:</p>
+<h3 class="h">{{user[1]}}</h3>
+      </nav>
+    </header>
+<div class="d">
+            {{user[1]}}<br>
+            {{user[2]}}<br>
+            {{user[3]}}<br>
+            {{user[4]}}<br>
+            {{user[5]}}<br>
+            {{user[6]}}<br>
+            {{user[7]}}<br>
+            {{user[8]}}<br>
+            {{user[9]}}
+</div>
+
+<div class="dd">
+FIRST_NAME<br>
+LAST_NAME<br>
+EMAIL<br>
+GENDER<br>
+AGE<br>
+STANDARD<br>
+CLASS_TEACHER<br>
+PASSWORD<br>
+SCENARIO
+</div>
+<div class="daa">
+  <a href="{{ url_for('dash_bord')}}" ><button class="btn btn-success">BACK-TO-DASHBORD</button></a>
+</div>
+ </body>
+</html>

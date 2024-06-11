@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OUTPUT</title>
+        <link rel="stylesheet" href="/static/search.css">
+        <!-- --- -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <!-- bootstrap cdn -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      
+        <!-- jQuery library -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      
+        <!-- Popper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+        <!-- ------ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      
+        <!-- jQuery library -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      
+        <!-- Popper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+    </head>
+<body>
+    <Header class="header">
+        <h1>ADMIN DASHBORD</h1>
+        <a href="{{ url_for('dash_bord')}}" class="ADD"><button class="btn btn-info">BACK-TO-DASHBORD</button></a>
+    </Header>
+<table id="customers">
+    <tr>
+      <th>ID</th>
+      <th>First-name</th>
+      <th>Last-name</th>
+      <th>Mail-id</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Standard</th>
+      <th>Teacher</th>
+      <th>Password</th>
+      <th>SCENARIO</th>
+      <th>Action</th>
+    </tr>
+    {% for row in display %}
+    <tr>
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
+      <td>{{row[6]}}</td>
+      <td>{{row[7]}}</td>
+      <td>{{row[8]}}</td>
+      <td>{{row[9]}}</td>
+      <td>
+        <a href="{{ url_for('update', id=row[0]) }}">
+          <button class="buttons">EDIT</button>
+        </a>
+        <a href="{{ url_for('drop', id=row[0]) }}"  class="button" >Delete</a>
+
+        <a href="{{ url_for('view', id=row[0]) }}" class="buttonn" >VIEW</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+  
+</body>
+</html>

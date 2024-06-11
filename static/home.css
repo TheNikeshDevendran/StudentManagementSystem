@@ -1,0 +1,35 @@
+nav{
+  height:55px;
+  background-color: #8a2ce2;
+}
+nav ul li a{
+  color:rgb(227, 225, 225) ;
+  font-family:math;
+  font-size:large;
+
+}
+
+.container img{
+  width: 150%;
+  height: 350px;
+}
+
+.fonts{
+  font-family:math;
+  color: rgb(193, 13, 112);
+}
+
+.fontss{
+  font-family:math;
+  color: rgb(32, 50, 217);
+}
+
+.fontsss{
+  font-family:math;
+  color: rgb(215, 85, 90);
+}
+
+.footer{
+  height: 35px;
+  background-color: rgb(145, 240, 186);
+}

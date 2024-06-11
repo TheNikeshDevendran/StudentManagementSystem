@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- --- -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ------ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/static/login.css">
+
+</head>
+<body>
+  <!-- --navbar -->
+  <header>
+    <div class="containers">
+      <nav class="nav nav-tabs ">
+        <ul class="nav nav-underline">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admission">Admission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div align="center">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong> {{message}}</strong>
+    </div>
+    {% endfor %}
+    </div>
+  <!-- --end --navbar -->
+  <section class="Form">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-5">
+          <img src="/static/aaa.jpg" class="img-fluid" alt="clg">
+        </div>
+        <div class="col-lg-7 ">
+            <form action="/loginvalidation" method="post">
+              <input type="text" name="LOGIN_EMAILID" placeholder="mail-id" required><br><br>
+              <input type="text" name="LOGIN_PASSWORD" placeholder="password" required><br><br>
+              <input type="submit" value="LOGIN" class="btn btn-success">
+            </form>
+            <div align="center" class="register">
+              <a class="ADD"><button class="btn btn-primary" data-target="#myymodel" data-toggle="modal">REGISTER</button></a>
+            </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="modal" id="myymodel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="text-primary">ADD STUDENT</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="/addempo" onsubmit="validateForm(event)">
+              <div class="form-group">
+                <label for="formGroupExampleInput">First Name</label>
+                <input type="text" class="form-control" id="fn" placeholder="Username" name="FN">
+                <span id="namevalid" class="form-text text-muted invalid-feedback text-danger" >
+                  ENTER THE TEXT FOR NAME FIELD
+                </span>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Last Name</label>
+                <input type="text" class="form-control" id="ln" placeholder="Surname" name="LN">
+                <span id="namevalid" class="form-text text-muted invalid-feedback text-danger" >
+                  ENTER THE TEXT FOR LAST NAME FIELD
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Mail-id</label>
+                <input type="text" class="form-control" id="ml" placeholder="abc@gmail.com" name="ID">
+                <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                  ENTER THE EMAIL ID
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">GENDER</label>
+                <input type="text" class="form-control" id="gn" placeholder="male,female" name="GENDER">
+                <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                  ENTER THE TEXT FOR GENDER FIELD
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">AGE</label>
+                <input type="date" class="form-control" id="formGroupExampleInput2" name="AGE">
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">STANDARD</label>
+                <select class="custom-select" name="STD" required>
+                  <option>Open this select menu</option>
+                  <option>FIRST</option>
+                  <option>SECOND</option>
+                  <option>THIRD</option>
+                  <option>FOURTH</option>
+                  <option>FIFTH</option>
+                  <option>SIXTH</option>
+                  <option>SEVENTH</option>
+                  <option>EIGHT</option>
+                  <option>NINETH</option>
+                  <option>TENTH</option>
+                  <option>DEGREE</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">CLASS_TEACHER</label>
+                <input type="text" class="form-control" id="ct" placeholder="Teacher name/principal name" name="CT">
+                <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                  ENTER THE TEXT FOR CLASS TEACHER FIELD
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="formGroupExampleInput2">SET PASSWORD</label>
+                <input type="password" class="form-control" id="sp" placeholder="*****" name="SP">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Active/inactive</label>
+                <input type="checkbox" class="form-control" name="ck">
+              </div>
+              <div class="form-btn" class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <marquee  direction="left">
+      <span class="text-muted fonts">||WELCOME TO  PEOPLES WELFARE SOCIETY||</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-muted fonts">||EVERY DAY IS A NEW BEGINING||</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-muted fonts">||HAVE FAITH IN YOU||</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="text-muted fonts">||YOU ALL ARE THE PRIDE OF PEOPLES WELFARE SOCIETY ||</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </marquee>
+  </div>
+</footer>
+<!-- -------- -->
+<script>
+  function validateForm(event) {
+    let firstNameInput = document.getElementById('fn');
+    let lastNameInput = document.getElementById('ln');
+    let emailInput = document.getElementById('ml'); // Assuming this is the email input field
+    let genderInput = document.getElementById('gn'); // Assuming this is the gender input field
+    let teacher = document.getElementById('ct'); // Assuming this is the gender input field
+    let pas = document.getElementById('sp'); // Assuming this is the gender input field
+
+    let regex = /^[a-zA-Z]+$/;
+    let rg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    if (!regex.test(firstNameInput.value)) {
+      // document.getElementById("error").innerHTML = "ENTER FIRST NAME AS TEXT";
+      // firstNameInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+      firstNameInput.classList.add('is-invalid');
+      firstNameInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else {
+      firstNameInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+      firstNameInput.classList.remove('is-invalid');
+    }
+
+    if (!regex.test(lastNameInput.value)) {
+      // document.getElementById("error").innerHTML = "ENTER LAST NAME AS TEXT";
+      // lastNameInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+      lastNameInput.classList.add('is-invalid');
+      lastNameInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else {
+      lastNameInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+      lastNameInput.classList.remove('is-invalid');
+    }
+
+    if (!rg.test(emailInput.value)) {
+      // document.getElementById("error").innerHTML = "ENTER A VALID EMAIL";
+      // emailInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+      emailInput.classList.add('is-invalid');
+      emailInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else {
+      emailInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+      emailInput.classList.remove('is-invalid');
+    }
+
+    if (!regex.test(genderInput.value)) {
+      // document.getElementById("error").innerHTML = "ENTER GENDER AS TEXT";
+      // genderInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+      genderInput.classList.add('is-invalid');
+      genderInput.focus();
+      event.preventDefault(); // Prevent form submission
+    } else {
+      genderInput.style.boxShadow = "0 0 5px green";
+      genderInput.classList.remove('is-invalid');
+    }
+
+    if (!regex.test(teacher.value)) {
+      // document.getElementById("error").innerHTML = "ENTER TEACHER AS TEXT";
+      // teacher.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+      teacher.classList.add('is-invalid');
+      teacher.focus();
+      event.preventDefault(); // Prevent form submission
+    } else {
+      teacher.style.boxShadow = "0 0 5px green";
+      teacher.classList.remove('is-invalid');
+    }
+
+    if (!regex.test(pas.value)) {
+  // document.getElementById("error").innerHTML = "ENTER TEACHER AS TEXT";
+  // teacher.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  pas.classList.add('is-invalid');
+  pasr.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  pas.style.boxShadow = "0 0 5px green";
+  pas.classList.remove('is-invalid');
+}
+  }
+
+</script>
+</html>

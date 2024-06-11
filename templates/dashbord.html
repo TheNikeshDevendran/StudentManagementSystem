@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DASHBORD</title>
+  <link rel="stylesheet" href="/static/dashbord.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ------ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+  <Header class="header">
+    <h1>ADMIN DASHBORD</h1>
+    <a href="{{ url_for('export_excel')}}" class="exports"><button class="btn btn-warning">EXPORT TO EXCEL</button></a>
+    <a class="ADD"><button class="btn btn-primary" data-target="#myymodel" data-toggle="modal">ADDSTUDENT</button></a>
+    <a href="{{ url_for('home')}}" class="homm"><button class="btn btn-success" >HOME</button></a>
+    <a href="{{ url_for('logout')}}" class="log"><button class="btn btn-danger" >LOGOUT</button></a>
+    <div class="container">
+      <div class="modal" id="myymodel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="text-primary">ADD STUDENT</h3>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="/from_dash" onsubmit="validateForm(event)">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">First Name</label>
+                  <input type="text" class="form-control" id="fn" placeholder="Username"name="FN" >
+                  <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                    ENTER THE TEXT FOR NAME FIELD
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Last Name</label>
+                  <input type="text" class="form-control" id="ln" placeholder="Surname" name="LN">
+                  <span id="namevalid" class="form-text text-muted invalid-feedback" class="text-danger font-weight-bold">
+                    ENTER THE TEXT FOR LAST NAME FIELD
+                  </span>   
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Mail-id</label>
+                  <input type="text" class="form-control" id="ml" placeholder="abc@gmail.com" name="ID">
+                  <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                    ENTER THE MAIL ID
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">GENDER</label>
+                  <input type="text" class="form-control" id="gn" placeholder="male,female" name="GENDER" >
+                  <span id="namevalid" class="form-text text-muted invalid-feedback text-danger">
+                    ENTER THE TEXT FOR GENDER FIELD
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">AGE</label>
+                  <input type="date" class="form-control" id="formGroupExampleInput2" name="AGE">
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">STANDARD</label>
+                  <select class="custom-select" name="STD" required>
+                    <option>Open this select menu</option>
+                    <option >FIRST</option>
+                    <option >SECOND</option>
+                    <option >THIRD</option>
+                    <option >FOURTH</option>
+                    <option >FIFTH</option>
+                    <option >SIXTH</option>
+                    <option >SEVENTH</option>
+                    <option >EIGHT</option>
+                    <option >NINETH</option>
+                    <option >TENTH</option>
+                    <option >DEGREE</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">CLASS_TEACHER</label>
+                  <input type="text" class="form-control" id="ct" placeholder="Teacher name/principal name" name="CT">
+                  <span id="namevalid" class="form-text text-muted invalid-feedback text-danger" >
+                    ENTER THE TEXT FOR CLASS TEACHER FIELD
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">SET PASSWORD</label>
+                  <input type="password" class="form-control" id="sp" placeholder="*****" name="SP">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Active/inactive</label>
+                  <input type="checkbox" class="form-control" id="ck" name="ck">
+                </div>
+                <div class="form-btn" class="form-group">
+                <button type="submit" class="btn btn-primary" >Submit</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </Header>
+  <div class="non">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong> {{message}}</strong>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="container">
+    <button class="btn btn-primary" data-target="#mymodel" data-toggle="modal">SEARCH</button>
+
+    <div class="modal" id="mymodel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="text-primary">SEARCH THE STUDENT HERE</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form action='/search' method="post" class="forms">
+              <input type="text" name="search">
+              <input type="submit" value="search" class="buttonform">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table id="customers">
+    <tr>
+      <th>ID</th>
+      <th>First-name</th>
+      <th>Last-name</th>
+      <th>Mail-id</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Standard</th>
+      <th>Teacher</th>
+      <th>Password</th>
+      <th>STATUS</th>
+      <th>Action</th>
+    </tr>
+    {% for row in display %}
+       {% if row[9] == 'ACTIVE' %}
+      <tr>
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
+      <td>{{row[6]}}</td>
+      <td>{{row[7]}}</td>
+      <td>{{row[8]}}</td>
+      <td>{{row[9]}}</td>
+      <td>
+        <a href="{{ url_for('update', id=row[0]) }}">
+          <button class="buttons">EDIT</button>
+        </a>
+        <a href="{{ url_for('drop', id=row[0]) }}"  class="button" >Delete</a>
+
+        <a href="{{ url_for('view', id=row[0]) }}" class="buttonn" >VIEW</a>
+      </td>
+    </tr>
+       {% endif %}
+    {% endfor %}
+
+  </table>
+  
+</body>
+<script>
+  function validateForm(event) {
+    let firstNameInput = document.getElementById('fn');
+    let lastNameInput = document.getElementById('ln');
+    let emailInput = document.getElementById('ml'); // Assuming this is the email input field
+    let genderInput = document.getElementById('gn'); // Assuming this is the gender input field
+    let teacher = document.getElementById('ct'); // Assuming this is the gender input field
+    let pas = document.getElementById('sp'); // Assuming this is the gender input field
+
+    let regex = /^[a-zA-Z]+$/;
+    let rg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    if (!regex.test(firstNameInput.value)) {
+  // document.getElementById("error").innerHTML = "ENTER FIRST NAME AS TEXT";
+  // firstNameInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  firstNameInput.classList.add('is-invalid');
+  firstNameInput.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  firstNameInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+  firstNameInput.classList.remove('is-invalid');
+}
+
+if (!regex.test(lastNameInput.value)) {
+  // document.getElementById("error").innerHTML = "ENTER LAST NAME AS TEXT";
+  // lastNameInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  lastNameInput.classList.add('is-invalid');
+  lastNameInput.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  lastNameInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+  lastNameInput.classList.remove('is-invalid');
+}
+
+if (!rg.test(emailInput.value)) {
+  // document.getElementById("error").innerHTML = "ENTER A VALID EMAIL";
+  // emailInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  emailInput.classList.add('is-invalid');
+  emailInput.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  emailInput.style.boxShadow = "0 0 5px green"; // Set the input field color as green
+  emailInput.classList.remove('is-invalid');
+}
+
+if (!regex.test(genderInput.value)) {
+  // document.getElementById("error").innerHTML = "ENTER GENDER AS TEXT";
+  // genderInput.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  genderInput.classList.add('is-invalid');
+  genderInput.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  genderInput.style.boxShadow = "0 0 5px green";
+  genderInput.classList.remove('is-invalid');
+}
+
+if (!regex.test(teacher.value)) {
+  // document.getElementById("error").innerHTML = "ENTER TEACHER AS TEXT";
+  // teacher.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  teacher.classList.add('is-invalid');
+  teacher.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  teacher.style.boxShadow = "0 0 5px green";
+  teacher.classList.remove('is-invalid');
+}
+
+if (!regex.test(pas.value)) {
+  // document.getElementById("error").innerHTML = "ENTER TEACHER AS TEXT";
+  // teacher.style.boxShadow = "0 0 5px red"; // Set the input field color as red
+  pas.classList.add('is-invalid');
+  pasr.focus();
+  event.preventDefault(); // Prevent form submission
+} else {
+  pas.style.boxShadow = "0 0 5px green";
+  pas.classList.remove('is-invalid');
+}
+  }
+</script>
+</html>

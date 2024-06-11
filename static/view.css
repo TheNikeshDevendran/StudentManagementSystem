@@ -1,0 +1,87 @@
+h1{
+    background-color: rgb(231, 227, 155);
+    color:rgb(2, 5, 4);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top:-6px;
+    height: 60px;
+}
+
+body{
+    background-color:rgba(255, 255, 255, 0.703);
+}
+
+.frame{
+    width: 70%;
+    height: 350px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-size: 100%,100%;
+    box-shadow: 1px 2px 10px 10px rgb(180, 180, 178);
+    
+}
+
+.p{
+    float: left;
+    position: absolute;
+    font-size: 18px;
+    font-family: math;
+    margin-top: 15px;
+    text-decoration: underline;
+}
+
+.d{
+    display: flex;
+    font-size: x-large;
+    background-color: rgb(181, 234, 201);
+    height: 300px;
+    width: 611px;
+    margin-left: 321px;
+    margin-top: 104px;
+    font-family: math;
+    align-items: center;
+    align-content: center;
+}
+.h{
+    float: right;
+    font-family: math;
+    font-size: x-large;
+    margin-top: 15px;
+    margin-right: 873px;
+    border: 2px solid;
+}
+
+body{
+    background-color: #618f8f14;
+}
+
+.dd{
+    font-size: x-large;
+    background-color: rgb(218 181 234);
+    height:300px;
+    width: 611px;
+    margin-left: 89px;
+    margin-top: -298px;
+    margin-right: 50px;
+    float: left;
+    display: flex;
+    width: 223px;
+    font-family: math;
+}
+
+.d a button{
+    margin-left: 259px;
+    margin-bottom: -233px;
+    position: relative;
+  }
+
+.daa{
+    font-size: x-large;
+    margin-left: -254px;
+    margin-right: 50px;
+    float: left;
+    font-family: math;
+    margin-bottom: -585px;
+}
